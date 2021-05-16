@@ -22,7 +22,7 @@ function App() {
     height: 66px;
     border-radius: 50%;
     position: fixed;
-    background: #f2f1f7;
+    background: #565656;
     right: 16px;
     bottom: 17px;
     z-index: 2;

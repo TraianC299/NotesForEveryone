@@ -24,7 +24,7 @@ const btnLine = css`
   width: 28px;
   height: 4px;
   margin: 0 0 5px 0;
-  background-color: #565656;
+  background-color: #f2f1f7;
   ${easeSlow};
   &.closer {
     background-color: #565656;  
