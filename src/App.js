@@ -1,24 +1,58 @@
-import logo from './logo.svg';
 import './App.css';
+import TopicContainer from "./Components/GeneralUse/TopicContainer"
+import {BrowserRouter as Router, Switch, Route, useLocation} from "react-router-dom"
+import Home from "./Components/PageComponents/Home"
+import {useState} from "react"
+import InputPage from './Components/PageComponents/InputPage';
+import styled from "styled-components"
+import Programming from './Components/PageComponents/TopicPages.js/Programming/Programming';
+import Business from './Components/PageComponents/TopicPages.js/Business/Business';
+import Economics from './Components/PageComponents/TopicPages.js/Economics/Economics';
+import Philosophy from './Components/PageComponents/TopicPages.js/Philosophy/Philosophy';
+import Menu from './Components/GeneralUse/Menu';
+import PrivateRoute from "./Components/GeneralUse/PrivateRoute"
+import {useAuth} from "./firebase/contexts/AuthContext"
+import {AuthProvider} from "./firebase/contexts/AuthContext"
+import LogIn from './Components/GeneralUse/LogIn';
+import SignUp from './Components/GeneralUse/SignUp';
 
 function App() {
+  let Space=styled.div`
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    position: fixed;
+    background: #f2f1f7;
+    right: 16px;
+    bottom: 17px;
+    z-index: 2;
+    box-shadow: 0px 4px 20px 10px rgba(0, 0, 0, 0.1);
+    
+    @media (min-width: 768px) {
+        
+
+      }
+
+      @media (min-width: 768px) and (max-width: 1024px){
+        
+      }`
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <><Space></Space>
+    <AuthProvider>
+      <Route  path="/" exact component={Home}></Route>
+      <Route path="/programming" component={Programming}></Route>
+      <Route path="/business" component={Business}></Route>
+      <Route path="/economics" component={Economics}></Route>
+      <Route path="/philosophy" component={Philosophy}></Route>
+      <PrivateRoute path="/uploadNotes" component={InputPage}></PrivateRoute>
+      <Route path="/logIn" component={LogIn}></Route>
+      <Route path="/signUp" component={SignUp}></Route>
+    </AuthProvider>
+      <Menu></Menu>
+      
+    </>
   );
 }
 
