@@ -35,6 +35,12 @@ p{
   transition: trasform 0.3s ease-out;
 }
 
+
+.ql-editor {
+  min-height: 94vh;
+}
+
+
 @media screen and (min-width:600px){ 
   h1{
     font-size: 6rem;

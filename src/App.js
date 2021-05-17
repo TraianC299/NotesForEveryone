@@ -15,6 +15,8 @@ import {useAuth} from "./firebase/contexts/AuthContext"
 import {AuthProvider} from "./firebase/contexts/AuthContext"
 import LogIn from './Components/GeneralUse/LogIn';
 import SignUp from './Components/GeneralUse/SignUp';
+import Quill from './Components/PageComponents/Quill';
+
 
 function App() {
   let Space=styled.div`
@@ -46,7 +48,8 @@ function App() {
       <Route path="/business" component={Business}></Route>
       <Route path="/economics" component={Economics}></Route>
       <Route path="/philosophy" component={Philosophy}></Route>
-      <PrivateRoute path="/uploadNotes" component={InputPage}></PrivateRoute>
+      <PrivateRoute exact path="/uploadNotes" component={InputPage}></PrivateRoute>
+      <PrivateRoute  path ="/uploadNotes/quill" exact component={Quill}></PrivateRoute>
       <Route path="/logIn" component={LogIn}></Route>
       <Route path="/signUp" component={SignUp}></Route>
     </AuthProvider>

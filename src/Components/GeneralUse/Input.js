@@ -12,6 +12,7 @@ const InputText = styled.input`
     font-size: 1.6rem;
     color: #565656;
 
+
     @media (min-width: 768px) {
         width: 30vw;
         margin:auto;
