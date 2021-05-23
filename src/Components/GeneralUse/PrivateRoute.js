@@ -27,7 +27,10 @@ justify-content: center;`
 
 const PrivateRoute = ({component: Component, ...rest}) => {
 
-    const {currentUser} = useAuth()
+
+        let {currentUser} = useAuth()
+      
+
     return (
         <Route {...rest} render={props=>{
                 return currentUser? <Component {...props}></Component>

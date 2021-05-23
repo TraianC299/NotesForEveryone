@@ -13,7 +13,7 @@ const Button = ({text, color , borderColor, onClick, type, fill, textColor, bigg
     padding: 5px 20px;
     margin: 10px;
     border: 1.5px solid ${borderColor};
-    border-radius: 30px;
+    border-radius: 7px;
     border-color: ${color};
     font-size: ${bigger? "2.5rem": "1.6rem"};
     outline: none;

@@ -1,45 +1,20 @@
 import React from 'react'
-import SubTopicsTemplate from "./SubTopicsTemplate"
+import SubTopic from "./SubTopic"
+import {Route} from "react-router-dom"
+import SubSubTopic from './SubSubTopic'
+import SubSubTopics from './SubSubTopics'
 
-const ProgrammingSubTopics = () => {
-    const color1="#7DF481"
+const SubTopics = ({topic, color, path}) => {
     return (
-        <div>
-            <SubTopicsTemplate color={color1} list={["JavaScript", "HTML", "CSS"]}></SubTopicsTemplate>
-        </div>
+        
+        <>
+        
+             {Object.keys(topic).map(element=><SubTopic path={path} topic={topic} color ={color} name={element}/>)}
+        </>
     )
 }
 
-const EconomicsSubTopics = () => {
-    const color2="#7DF481"
-    return (
-        <div>
-            <SubTopicsTemplate color={color2} list={"History Of Economics"}></SubTopicsTemplate>
-        </div>
-    )
-}
-
-
-const PhilosophySubTopics = () => {
-    const color3="#7DF481"
-    return (
-        <div>
-            <SubTopicsTemplate color={color3} list={"History Of Economics"}></SubTopicsTemplate>
-        </div>
-    )
-}
-
-const BusinessSubTopics = () => {
-    const color4="#7DF481"
-    return (
-        <div>
-            <SubTopicsTemplate color={color4} list={"History Of Economics"}></SubTopicsTemplate>
-        </div>
-    )
-}
-
-export {ProgrammingSubTopics, BusinessSubTopics, EconomicsSubTopics, PhilosophySubTopics}
-
+export default SubTopics
 
 
 

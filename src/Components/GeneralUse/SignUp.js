@@ -5,6 +5,7 @@ import {Link, useHistory} from "react-router-dom"
 import Input from './Input'
 import Button from './Button'
 import {Form, P} from "./LogIn"
+import InputMUI from './InputMUI'
 
 
 
@@ -44,9 +45,9 @@ const SignUp = () => {
             <Form onSubmit={handleSubmit}>
                 <h2>Sign Up</h2>
                 {error && <P>{error}</P>}
-                <Input type="email" setInputValue={setEmailRef}></Input>
-                <Input type="password" setInputValue={setPasswordRef}></Input>
-                <Input type="password" setInputValue={setPasswordConfirmationRef}></Input>
+                <InputMUI type="email" setValue={setEmailRef}></InputMUI>
+                <InputMUI type="password" setValue={setPasswordRef}></InputMUI>
+                <InputMUI type="password" setValue={setPasswordConfirmationRef}></InputMUI>
                 <Button fill={true} text="Sign Up" disabled={loading} type="submit"
                 color="#565656" textColor="white">Sign Up</Button>
             </Form>

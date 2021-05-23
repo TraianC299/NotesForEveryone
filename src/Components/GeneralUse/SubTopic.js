@@ -1,9 +1,10 @@
 import React from 'react'
-import { Route } from 'react-router'
+import { NavLink, Route, useHistory } from 'react-router-dom'
 import styled from "styled-components"
-import InputPage from '../PageComponents/InputPage'
+import Notes from './Notes'
+import SubSubTopics from "./SubSubTopics"
 
-const Note = ({name, link, color}) => {
+const SubTopic = ({topic, name, color, path}) => {
     const Container = styled.div`
     display: flex;
     height: 10vh;
@@ -17,15 +18,19 @@ const Note = ({name, link, color}) => {
     margin: auto;
     margin-top: 2vh;
     `
-    return (<>
-
-        <a href={link}>
+   
+    return (
+        <>
+         
+        
+            <NavLink to={`${path}/${name}`}>
                 <Container>
                 {name}
                 </Container>
-            </a>
-            </>
+            </NavLink>
+        
+        </>
     )
 }
 
-export default Note
+export default SubTopic

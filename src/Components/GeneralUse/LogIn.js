@@ -4,6 +4,8 @@ import {useAuth} from "../../firebase/contexts/AuthContext"
 import {Link, useHistory} from "react-router-dom"
 import Input from "./Input"
 import Button from './Button'
+import InputMUI from './InputMUI'
+
 
     export const Form = styled.form`
     background: #f2f1f7;
@@ -74,15 +76,15 @@ const LogIn = () => {
     }
 
 
-
+    console.log(email)
 
     return (
         <div>
             <Form onSubmit={(e)=>handleSubmit(e)}>
                 <h2>Log In</h2>
                 {error && <P>{error}</P>}
-                <Input type="email" setInputValue={setEmail}></Input>
-                <Input type="password" setInputValue={setPassword}></Input>
+                <InputMUI type="email" label="email"  value={email} setValue={setEmail}></InputMUI>
+                <InputMUI type="password" label="password" value={password} setValue={setPassword}></InputMUI>
                 <Button text="Log In" disabled={loading} type="submit">Log In</Button>
                 <Link to="/forgotPassword">Forgot Password?</Link>
             </Form>

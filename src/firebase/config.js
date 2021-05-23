@@ -5,6 +5,7 @@ import "firebase/storage"
 //import stabase
 import "firebase/firestore"
 
+
 // Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyDM6Iy6oPEkPPQrKSGQOHuPcsGdt6gvP3Y",

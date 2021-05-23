@@ -1,14 +1,9 @@
 import './App.css';
-import TopicContainer from "./Components/GeneralUse/TopicContainer"
 import {BrowserRouter as Router, Switch, Route, useLocation} from "react-router-dom"
 import Home from "./Components/PageComponents/Home"
-import {useState} from "react"
 import InputPage from './Components/PageComponents/InputPage';
 import styled from "styled-components"
-import Programming from './Components/PageComponents/TopicPages.js/Programming/Programming';
-import Business from './Components/PageComponents/TopicPages.js/Business/Business';
-import Economics from './Components/PageComponents/TopicPages.js/Economics/Economics';
-import Philosophy from './Components/PageComponents/TopicPages.js/Philosophy/Philosophy';
+import SubTopics from "./Components/GeneralUse/SubTopics"
 import Menu from './Components/GeneralUse/Menu';
 import PrivateRoute from "./Components/GeneralUse/PrivateRoute"
 import {useAuth} from "./firebase/contexts/AuthContext"
@@ -16,6 +11,11 @@ import {AuthProvider} from "./firebase/contexts/AuthContext"
 import LogIn from './Components/GeneralUse/LogIn';
 import SignUp from './Components/GeneralUse/SignUp';
 import Quill from './Components/PageComponents/Quill';
+import {programming, economics} from "./Components/GeneralUse/topics"
+import SubSubTopics from './Components/GeneralUse/SubSubTopics';
+import useDatabase from "./firebase/hooks/useDatabase"
+import Notes from './Components/GeneralUse/Notes';
+import RouteTopic from "./Components/GeneralUse/RouteTopic"
 
 
 function App() {
@@ -40,18 +40,25 @@ function App() {
       }`
 
 
+
   return (
     <><Space></Space>
     <AuthProvider>
+      <Switch>
       <Route  path="/" exact component={Home}></Route>
-      <Route path="/programming" component={Programming}></Route>
-      <Route path="/business" component={Business}></Route>
-      <Route path="/economics" component={Economics}></Route>
-      <Route path="/philosophy" component={Philosophy}></Route>
+      
+      {RouteTopic({path:"programming", topic: programming, color: "#B1BEFF"})}
+        
+        {RouteTopic({path:"economics", topic: economics, color: "#B1DAFF"})}
+
+        
+
+
       <PrivateRoute exact path="/uploadNotes" component={InputPage}></PrivateRoute>
       <PrivateRoute  path ="/uploadNotes/quill" exact component={Quill}></PrivateRoute>
       <Route path="/logIn" component={LogIn}></Route>
       <Route path="/signUp" component={SignUp}></Route>
+      </Switch>
     </AuthProvider>
       <Menu></Menu>
       
