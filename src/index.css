@@ -1,0 +1,127 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  font-family:sans-serif;
+}
+
+html { font-size: 62.5%; }
+
+body{font-family: sans-serif;}
+
+p{
+  color: #565656
+}
+
+h1{
+  font-size: 6rem;
+}
+
+h2{
+  font-size:3rem;
+}
+
+h3{
+  font-size:2.5rem
+}
+
+h4{
+  font-size: 4ch
+}
+
+p{
+  font-size: 1.6rem
+}
+
+.animation{
+  background-color: rgba(255, 255, 255, .15);   
+  backdrop-filter: blur(5px);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left:0;
+}
+
+
+.animation>button{
+  opacity: 1;
+}
+
+.animation>h1{
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-weight: 300;
+}
+
+.animation>img{
+max-width:100%;
+max-height:60%;
+align-self: center;
+justify-self: center;
+}
+.ql-editor{
+  font-size: 160%;
+}
+.selected-icon>* {
+  transform: scale(1.3);
+  transition: trasform 0.3s ease-out;
+}
+
+
+.ql-editor {
+  min-height: calc(100vh - 32px);
+}
+
+.ql-editor>p>img {
+  height: 300px;
+}
+
+a{text-decoration: none}
+
+.MuiTypography-body1 {
+  font-size: 1.5rem !important;
+}
+.MuiCollapse-container>*>*>*{
+  font-size: 140% !important;
+}
+
+@media screen and (min-width:600px){ 
+  .animation>img{
+    max-width:100%;
+    max-height:80%;
+    align-self: center;
+    justify-self: center;
+    }
+  h1{
+    font-size: 6rem;
+  }
+
+  
+}
+
+@media screen and (min-width:600px) and (max-width:1350px){
+  h1{
+    font-size: 8rem;
+  }
+
+  h2{
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (orientation: portrait) and (min-width:700px){
+  h1{
+    font-size: 8rem;
+  }
+
+  h2{
+    font-size: 3rem;
+  }
+}
